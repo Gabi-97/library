@@ -1,16 +1,137 @@
+:root {
+    --dark-green: #88AB8E;
+    --light-green: #AFC8AD;
+    --dark-cream: #EEE7DA;
+    --light-cream: #F2F1EB;   
+}
+
+body {
+    margin:0;
+    padding: 0;
+    background-color: var(--light-cream);
+    height:100vh;
+}
+/* HEADER */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-green);
+}
+h1 {
+    padding-left: 30px;
+    color: var(--light-cream);
+}
+h2 {
+     padding-right: 70px;
+     color: var(--light-cream);
+}
+/* MAIN CONTENT */
 .content-container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 1fr;   
 }
 .book-cards{
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: var(--light-green);
+    
 }
 .book-card {
-    border: black solid 2px;
-    padding: 20px;
+    border: var(--dark-green) solid 2px;
+    border-radius: 5%;
+    min-width: 200px;
+    height:200px;
+    background-color: var(--dark-cream);
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
-button{
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.read {
+    width: 100px;
+}
+button {
     padding: 10px;
+    background-color: var(--light-green);
+    border: var(--dark-green) 2px solid;
+    border-radius: 20px;
+    color:var(--dark-cream);
+    font-weight:900;
+}
+.book-title, .book-author, .book-pages {
     margin: 10px;
 }
+.book-title {
+    font-weight: bold;
+}
+/* 
+.read - finished/in progress button
+.book-delete - delete button
+.buttons-container - both buttons
+ */
+
+/* SIDEBAR */
+.add-book-sidebar{
+    display: grid;
+    background-color: var(--dark-cream);
+    min-height: 91vh;
+    padding: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+input {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 1.5em;
+}
+form > div {
+    align-items: center;
+}
+input {
+    background-color: var(--light-green);
+    border:none;
+    border-radius: 15px;
+    width: 200px;
+}
+label {
+    font-size: 1.2em;
+    font-style: italic;
+}
+span {
+    font-weight: bold;
+}
+#read {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--dark-cream);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid var(--dark-green);
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+#read:checked {
+    background-color: var(--light-green);
+}
+.add-book {
+    width: 200px;
+    height: 3em;
+    margin-top: 20px;
+    align-self: center;
+    font-size: 1em;
+}
+

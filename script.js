@@ -1,20 +1,27 @@
 //storing the books in an array
 const myLibrary  = [];
 
-//constructor 
-function Book(title, author, pages, read) {
-        this.title = title;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title; 
         this.author = author;
         this.pages = pages;
         this.read = read;
+    }
 }
 
-//create new books from book costructor based on user input
+//create new books from book class based on user input
 function addBookToLibrary() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const read = haveRead();
+
+    //alert if title/author/pages fields are emtpy
+    if (title.trim() === '' || author.trim() === '' || pages.trim() === '') {
+        alert('Please fill in all fields before adding a book.');
+        return; 
+    }
 
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
@@ -76,9 +83,10 @@ function createBook(bookData, index) {
     cardDiv.appendChild(bookAuthor);
 
     bookPages.classList.add("book-pages");
-    bookPages.textContent = bookData.pages;
+    bookPages.textContent = bookData.pages + " pgs";
     cardDiv.appendChild(bookPages);
 
+    buttonsDiv.classList.add("buttons-container")
     cardDiv.appendChild(buttonsDiv);
 
     bookRead.classList.add("read");
@@ -107,10 +115,7 @@ function createBook(bookData, index) {
         const dataIndex = parseInt(cardDiv.getAttribute('data-index'));
         myLibrary.splice(dataIndex, 1);
         displayBooks();
-    });
-
-    
-    
+    });  
 }
 
 

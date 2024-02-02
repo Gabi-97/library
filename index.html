@@ -9,6 +9,7 @@
 <body>
     <div class="header-container">
       <h1>library</h1>
+      <h2>add a new book to the library</h2>
     </div>
     <div class="content-container">
       
@@ -17,24 +18,23 @@
       </div>
       <div class="add-book-sidebar">
         <form action="">
-          Add New Book To The Library
           <div>
-            <label for="title">Title* </label>
+            <label for="title">What is the <span>title</span> of the book? *</label><br>
             <input type="text" name="title" id="title" required minlength="5" maxlength="30">
           </div>
           <div>
-            <label for="author">Author* </label>
+            <label for="author">Who is the <span>author</span> of the book? *</label><br>
             <input type="text" name="author" id="author" required minlength="5" maxlength="30">
           </div>
           <div>
-            <label for="pages">Pages* </label>
-            <input type="number" name="pages" id="pages" required>
+            <label for="pages">How many <span>pages</span> are in the book?</label><br>
+            <input type="number" name="pages" id="pages" required min="50" max="1999">
           </div>
           <div>
             <label for="read">Have you read it?</label>
             <input type="checkbox" name="read" id="read">
           </div>
-          <button type="button" class="add-book">Add Book</button>
+          <button type="submit" class="add-book">Add Book</button>
         </form>
       </div>
     </div>
